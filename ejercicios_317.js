@@ -2,6 +2,10 @@ const pagoPorHora = 10;
 
 let valores = [];
 
+let sueldoSemanal = [];
+
+let sumaTotal = [];
+
 let choferes = [{
         nombre: "Luis",
         horas: [8, 7, 6, 2, 7, 0],
@@ -27,7 +31,7 @@ let choferes = [{
 for (let i = 0; i < choferes.length; i++) {
     let suma = choferes[i].horas;
     let pagoSemanal = suma.reduce((a, b) => a + b, 0);
-
+    sueldoSemanal.push(pagoSemanal * pagoPorHora * 6);
     console.log(`---Reporte ${i + 1}---`);
     console.log(`${choferes[i].nombre} trabajo: ${pagoSemanal} horas.`);
     console.log(
@@ -42,3 +46,8 @@ for (let j = 0; j < choferes.length; j++) {
         ` trabajo mas horas el dia lunes:${Math.max.apply(null, valores)} horas.`
     );
 }
+sumaTotal = 0;
+sueldoSemanal.forEach(function(sueldoSemanal) {
+    sumaTotal += sueldoSemanal;
+});
+console.log(`La empresa pagara esta semana: ${sumaTotal} soles`);
