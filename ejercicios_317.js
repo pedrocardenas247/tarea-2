@@ -4,7 +4,7 @@ let valores = [];
 
 let sueldoSemanal = [];
 
-let sumaTotal = [];
+let sumaTotal = 0;
 
 let choferes = [{
         nombre: "Luis",
@@ -46,7 +46,7 @@ for (let j = 0; j < choferes.length; j++) {
         ` trabajo mas horas el dia lunes:${Math.max.apply(null, valores)} horas.`
     );
 }
-sumaTotal = 0;
+
 sueldoSemanal.forEach(function(sueldoSemanal) {
     sumaTotal += sueldoSemanal;
 });
