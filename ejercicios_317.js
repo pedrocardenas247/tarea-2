@@ -39,12 +39,14 @@ for (let i = 0; i < choferes.length; i++) {
     );
 }
 for (let j = 0; j < choferes.length; j++) {
-    valores.push(choferes[j].horas[j]);
+    valores.push(choferes[j].horas[0]);
 } {
     console.log(`---Reporte General ---`);
     console.log(
         ` trabajo mas horas el dia lunes:${Math.max.apply(null, valores)} horas.`
     );
+    console.log(choferes[1].nombre);
+    console.log(valores);
 }
 
 sueldoSemanal.forEach(function(sueldoSemanal) {
